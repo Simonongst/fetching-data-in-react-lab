@@ -9,37 +9,32 @@ const StarshipSearch = ({ onSearch, onReset, resultCount, prevSearchTerm }) => {
     setSearchTerm("");
   };
 
-  const showResetButton = prevSearchTerm !== "";
-
   return (
     <div>
+      <h1>Star Wars API</h1>
       <h3>Search</h3>
-      Search Term:
       <form onSubmit={handleSubmit}>
+        <p>Search Term:</p>
         <input
           type="text"
           value={searchTerm}
           onChange={(event) => setSearchTerm(event.target.value)}
         />
-        <button type="submit">Search</button>
-
-        {showResetButton && (
-          <div><button onClick={onReset}>Show all starships</button></div>
-        )}
+        <button type="submit">
+          {prevSearchTerm === "" ? "Search" : "Show all starships"}
+        </button>
       </form>
-      {prevSearchTerm && (
-        <p>
-          Last search: <strong>{prevSearchTerm}</strong>
-        </p>
-      )}
+      {prevSearchTerm && <p>Last search: {prevSearchTerm}</p>}
       <h3>Starships</h3>
+      <p>Number of results: {resultCount}</p>
       <p>
-        Number of results: {resultCount}
-      </p>
-      <p>
-        {prevSearchTerm
-          ? <>Last search: <strong>{prevSearchTerm}</strong></>
-          : 'Search for a starship by name.'}
+        {prevSearchTerm ? (
+          <>
+            Last search: <strong>{prevSearchTerm}</strong>
+          </>
+        ) : (
+          "Search for a starship by name."
+        )}
       </p>
     </div>
   );
