@@ -1,9 +1,14 @@
 import StarshipCard from '../StarshipCard/StarshipCard'
 
-const StarshipList = () => {
+const StarshipList = ({displayedStarships}) => {
+    if(!displayedStarships || displayedStarships.length === 0) {
+        return <p>Loading...</p>;
+    }
   return (
     <div>
-        <StarshipCard />
+        {displayedStarships.map((starship, index) => (
+            <StarshipCard key={index} starship={starship}/>
+        ))}
     </div>
   )
 }

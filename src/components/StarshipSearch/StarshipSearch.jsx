@@ -2,7 +2,7 @@ import React from 'react'
 
 const StarshipSearch = () => {
   return (
-    <div>StarshipSearch</div>
+    <div>Search</div>
   )
 }
 
