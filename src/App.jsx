@@ -21,9 +21,16 @@ const App = () => {
     fetchStarships();
   }, [])
 
+  const handleSearch = (term) => {
+    const filtered = starshipsData.filter((ship) => {
+      ship.name.toLowerCase().includes(term.toLowerCase());
+    })
+    setDisplayedStarships(filtered);
+  }
+
   return (
     <div>
-      <StarshipSearch />
+      <StarshipSearch onSearch={handleSearch}/>
       <StarshipList displayedStarships={displayedStarships}/>
     </div>
   );
