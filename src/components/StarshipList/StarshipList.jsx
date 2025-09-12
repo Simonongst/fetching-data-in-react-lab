@@ -1,16 +1,20 @@
-import StarshipCard from '../StarshipCard/StarshipCard'
+import StarshipCard from "../StarshipCard/StarshipCard";
 
-const StarshipList = ({displayedStarships}) => {
-    if(!displayedStarships || displayedStarships.length === 0) {
-        return <p>Loading...</p>;
-    }
+const StarshipList = ({ displayedStarships }) => {
+  if (!displayedStarships || displayedStarships.length === 0) {
+    return <p>Loading...</p>;
+  }
   return (
-    <div>
+    <section>
+      <ul>
         {displayedStarships.map((starship, index) => (
-            <StarshipCard key={index} starship={starship}/>
+          <li key={index}>
+            <StarshipCard starship={starship} />
+          </li>
         ))}
-    </div>
-  )
-}
+      </ul>
+    </section>
+  );
+};
 
-export default StarshipList
+export default StarshipList;
