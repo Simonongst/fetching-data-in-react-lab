@@ -24,7 +24,7 @@ const StarshipSearch = ({ onSearch, onReset, resultCount, prevSearchTerm }) => {
           {prevSearchTerm === "" ? "Search" : "Show all starships"}
         </button>
       </form>
-      <p className="search-meta">
+      <div className="search-meta">
         {prevSearchTerm ? (
           <p>
             Last search: <strong>{prevSearchTerm}</strong>
@@ -32,7 +32,7 @@ const StarshipSearch = ({ onSearch, onReset, resultCount, prevSearchTerm }) => {
         ) : (
           <p>Search for a starship by name.</p>
         )}
-      </p>
+      </div>
       <h3>Starships</h3>
       <p className="search-meta">Number of results: {resultCount}</p>
     </div>
