@@ -23,7 +23,7 @@ const App = () => {
 
   const handleSearch = (term) => {
     const filtered = starshipsData.filter((ship) => {
-      ship.name.toLowerCase().includes(term.toLowerCase());
+      return ship.name.toLowerCase().includes(term.toLowerCase());
     })
     setDisplayedStarships(filtered);
   }
