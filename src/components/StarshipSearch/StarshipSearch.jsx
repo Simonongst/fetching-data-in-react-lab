@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-const StarshipSearch = ({ onSearch, onReset, resultCount, prevSearchTerm }) => {
+const StarshipSearch = ({ onSearch, resultCount, prevSearchTerm }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   const handleSubmit = (event) => {

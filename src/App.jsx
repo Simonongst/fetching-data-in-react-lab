@@ -30,14 +30,9 @@ const App = () => {
     setPrevSearchTerm(term);
   };
 
-  const handleReset = () => {
-    setDisplayedStarships(starshipsData);
-    setPrevSearchTerm("");
-  };
-
   return (
     <div>
-      <StarshipSearch onSearch={handleSearch} onReset={handleReset} resultCount={displayedStarships.length} prevSearchTerm={prevSearchTerm} />
+      <StarshipSearch onSearch={handleSearch} resultCount={displayedStarships.length} prevSearchTerm={prevSearchTerm} />
       <StarshipList displayedStarships={displayedStarships} />
     </div>
   );
